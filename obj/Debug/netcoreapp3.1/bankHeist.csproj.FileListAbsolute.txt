@@ -1,0 +1,13 @@
+C:\Users\Eli\workspace\csharp\bankHeist\bin\Debug\netcoreapp3.1\bankHeist.exe
+C:\Users\Eli\workspace\csharp\bankHeist\bin\Debug\netcoreapp3.1\bankHeist.deps.json
+C:\Users\Eli\workspace\csharp\bankHeist\bin\Debug\netcoreapp3.1\bankHeist.runtimeconfig.json
+C:\Users\Eli\workspace\csharp\bankHeist\bin\Debug\netcoreapp3.1\bankHeist.runtimeconfig.dev.json
+C:\Users\Eli\workspace\csharp\bankHeist\bin\Debug\netcoreapp3.1\bankHeist.dll
+C:\Users\Eli\workspace\csharp\bankHeist\bin\Debug\netcoreapp3.1\bankHeist.pdb
+C:\Users\Eli\workspace\csharp\bankHeist\obj\Debug\netcoreapp3.1\bankHeist.csprojAssemblyReference.cache
+C:\Users\Eli\workspace\csharp\bankHeist\obj\Debug\netcoreapp3.1\bankHeist.AssemblyInfoInputs.cache
+C:\Users\Eli\workspace\csharp\bankHeist\obj\Debug\netcoreapp3.1\bankHeist.AssemblyInfo.cs
+C:\Users\Eli\workspace\csharp\bankHeist\obj\Debug\netcoreapp3.1\bankHeist.csproj.CoreCompileInputs.cache
+C:\Users\Eli\workspace\csharp\bankHeist\obj\Debug\netcoreapp3.1\bankHeist.dll
+C:\Users\Eli\workspace\csharp\bankHeist\obj\Debug\netcoreapp3.1\bankHeist.pdb
+C:\Users\Eli\workspace\csharp\bankHeist\obj\Debug\netcoreapp3.1\bankHeist.genruntimeconfig.cache
