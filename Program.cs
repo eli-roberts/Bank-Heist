@@ -16,8 +16,6 @@ namespace bankHeist
             string teamName = Console.ReadLine();
             HeistTeam.teamName = teamName;
 
-            int bankDiff = 100;
-
             bool quitting = false;
             while(quitting != true)
             {
@@ -42,7 +40,7 @@ namespace bankHeist
               }
               if(input == "3")
               {
-                runSimulation(teamSkill, bankDiff);
+                runSimulation(teamSkill);
               }
               if(input == "0")
               {
@@ -113,11 +111,15 @@ namespace bankHeist
           }
           return courage;
         }
-        static void runSimulation(int teamSkill, int bankDiff)
+        static void runSimulation(int teamSkill)
         {
           //Obtains number of simulations run based on user input
           Console.WriteLine("How many trial runs would you like to simulate?");
           int runs = Convert.ToInt32(Console.ReadLine());
+
+          //Obtains bank difficulty based on user input
+          Console.WriteLine("What difficulty level would you like to simulate?");
+          int bankDiff = Convert.ToInt32(Console.ReadLine());
           
           //Initializes random object
           var rand = new Random();
@@ -127,6 +129,10 @@ namespace bankHeist
           Console.WriteLine($"Team Skill: {teamSkill}");
           Console.WriteLine($"Bank Difficulty: {bankDiff}");
           string dots = "...............";
+
+
+          int successes = 0;
+          int failures = 0;
 
           int count = 0;
           while(count != runs)
@@ -139,20 +145,24 @@ namespace bankHeist
             foreach(var dot in dots)
             {
               Console.Write($"{dot}");
-              System.Threading.Thread.Sleep(75);
+              System.Threading.Thread.Sleep(20);
             }
             if (teamSkill > totalDiff)
             {
               Console.WriteLine("   Success!");
+              successes += 1;
               count += 1;
             }
             else
             {
               Console.WriteLine("   Failure!");
+              failures += 1;
               count += 1;
             }
 
           }
+          Console.WriteLine($"Successes: {successes} | Failures: {failures}");
+          Console.WriteLine($"Success Rate: {(successes/runs) * 100}% ");
           Console.WriteLine("\nPress any key to continue...");
           Console.ReadKey();
         }
