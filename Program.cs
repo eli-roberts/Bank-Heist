@@ -17,12 +17,12 @@ namespace bankHeist
             HeistTeam.teamName = teamName;
 
             int bankDiff = 100;
-            int teamSkill = 0;
 
             bool quitting = false;
             while(quitting != true)
             {
               Console.Clear();
+              int teamSkill = 0;
               foreach(var member in HeistTeam.MemberList)
               {
                 teamSkill += member.SkillLevel;
@@ -115,7 +115,12 @@ namespace bankHeist
         }
         static void runSimulation(int teamSkill, int bankDiff)
         {
+          var rand = new Random();
+          int luck = rand.Next(-10, 10);
+          int totalDiff = bankDiff + luck;
           Console.Clear();
+          Console.WriteLine($"Team Skill: {teamSkill}");
+          Console.WriteLine($"Bank Difficulty: {totalDiff} (Diff: {bankDiff} + Luck: {luck}) ");
           string dots = "............";
           Console.Write("Running simulation");
           foreach(var dot in dots)
@@ -124,7 +129,7 @@ namespace bankHeist
             System.Threading.Thread.Sleep(450);
           }
           Console.Write("\nResult: ");
-          if(teamSkill > bankDiff)
+          if(teamSkill > totalDiff)
           {
             Console.Write("Success");
           }
