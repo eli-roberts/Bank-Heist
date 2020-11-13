@@ -115,26 +115,43 @@ namespace bankHeist
         }
         static void runSimulation(int teamSkill, int bankDiff)
         {
+          //Obtains number of simulations run based on user input
+          Console.WriteLine("How many trial runs would you like to simulate?");
+          int runs = Convert.ToInt32(Console.ReadLine());
+          
+          //Initializes random object
           var rand = new Random();
-          int luck = rand.Next(-10, 10);
-          int totalDiff = bankDiff + luck;
+
+          
           Console.Clear();
           Console.WriteLine($"Team Skill: {teamSkill}");
-          Console.WriteLine($"Bank Difficulty: {totalDiff} (Diff: {bankDiff} + Luck: {luck}) ");
-          string dots = "............";
-          Console.Write("Running simulation");
-          foreach(var dot in dots)
+          Console.WriteLine($"Bank Difficulty: {bankDiff}");
+          string dots = "...............";
+
+          int count = 0;
+          while(count != runs)
           {
-            Console.Write($"{dot}");
-            System.Threading.Thread.Sleep(450);
-          }
-          Console.Write("\nResult: ");
-          if(teamSkill > totalDiff)
-          {
-            Console.Write("Success");
-          }
-          else{
-            Console.Write("Failure");
+            //Obtains a random luck integer and applies it to the bank difficulty
+            int luck = rand.Next(-10, 10);
+            int totalDiff = bankDiff + luck;
+
+            Console.Write("Running simulation");
+            foreach(var dot in dots)
+            {
+              Console.Write($"{dot}");
+              System.Threading.Thread.Sleep(75);
+            }
+            if (teamSkill > totalDiff)
+            {
+              Console.WriteLine("   Success!");
+              count += 1;
+            }
+            else
+            {
+              Console.WriteLine("   Failure!");
+              count += 1;
+            }
+
           }
           Console.WriteLine("\nPress any key to continue...");
           Console.ReadKey();
