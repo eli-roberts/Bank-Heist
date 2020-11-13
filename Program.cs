@@ -115,6 +115,9 @@ namespace bankHeist
         }
         static void runSimulation(int teamSkill, int bankDiff)
         {
+          var rand = new Random();
+          int luck = rand.Next(-10, 10);
+          int totalDiff = bankDiff + luck;
           Console.Clear();
           string dots = "............";
           Console.Write("Running simulation");
@@ -124,7 +127,7 @@ namespace bankHeist
             System.Threading.Thread.Sleep(450);
           }
           Console.Write("\nResult: ");
-          if(teamSkill > bankDiff)
+          if(teamSkill > totalDiff)
           {
             Console.Write("Success");
           }
